@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "572557639865",
+    "project_id": "cset-learning-tool",
+    "storage_bucket": "cset-learning-tool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572557639865:android:099c2bdb1fde0ee8e6db68",
+        "android_client_info": {
+          "package_name": "com.steveeckles.clt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572557639865-iu24f3t8c9h880q4knkb71r8mmoladh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeX6qUYUmXADrFNl7Kl-wt6Cgp1tHe6X0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572557639865-iu24f3t8c9h880q4knkb71r8mmoladh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
