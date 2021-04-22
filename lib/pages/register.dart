@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_builder.dart';
 
+import 'login.dart';
+
 FirebaseAuth _auth = FirebaseAuth.instance;
 
 class Register extends StatefulWidget {
@@ -77,7 +79,7 @@ class _RegisterState extends State<Register> {
                   child: Text(_success == null
                     ? ''
                     : (_success
-                      ? 'Successfully registered $_userEmail'
+                      ? ''
                       : 'Registration failed')),
                 )
               ],
@@ -90,13 +92,11 @@ class _RegisterState extends State<Register> {
 
   @override
   void dispose() {
-    // Clean up the controller when the Widget is disposed
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
 
-  // Example code for registration.
   Future<void> _register() async {
     final User user = (await _auth.createUserWithEmailAndPassword(
       email: _emailController.text,
@@ -108,6 +108,14 @@ class _RegisterState extends State<Register> {
         _success = true;
         _userEmail = user.email;
       });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Successfully Registered"),
+        )
+      );
+
+      _pushPage(context, Login());
     } else {
       _success = false;
     }

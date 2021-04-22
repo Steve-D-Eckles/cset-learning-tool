@@ -1,3 +1,4 @@
+import 'package:clt/pages/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
@@ -19,12 +20,6 @@ class _LoginState extends State<Login> {
     super.initState();
   }
 
-  void _pushPage(BuildContext context, Widget page) {
-    Navigator.of(context) /*!*/ .push(
-      MaterialPageRoute<void>(builder: (_) => page),
-    );
-  }
-
   @override Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -42,9 +37,9 @@ class _LoginState extends State<Login> {
                 }
                 await _signOut();
 
-                final String uid = user.uid;
+                final String email = user.email;
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('$uid has successfully signed out.'),
+                  content: Text('$email has successfully signed out.'),
                 ));
               },
               child: const Text('Sign out'),
@@ -77,6 +72,12 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  void _pushPage(BuildContext context, Widget page) {
+    Navigator.of(context) /*!*/ .push(
+      MaterialPageRoute<void>(builder: (_) => page),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +139,6 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
     super.dispose();
   }
 
-  // Example code of how to sign in with email and password.
   Future<void> _signInWithEmailAndPassword() async {
     try {
       final User user = (await _auth.signInWithEmailAndPassword(
@@ -152,6 +152,8 @@ class _EmailPasswordFormState extends State<_EmailPasswordForm> {
           content: Text('${user.email} signed in'),
         ),
       );
+
+      _pushPage(context, Welcome());
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
