@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:clt/models/course.dart';
+import 'package:clt/pages/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class Home extends StatelessWidget {
                       ));
                       return;
                     }
-                    await _signOut();
+                    await _signOut(context);
 
                     final String email = user.email;
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -96,7 +97,8 @@ class Home extends StatelessWidget {
     );
   }
 
-  Future<void> _signOut() async {
+  Future<void> _signOut(context) async {
     await _auth.signOut();
+    _pushPage(context, Welcome());
   }
 }

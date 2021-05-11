@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:clt/models/concept.dart';
 import 'package:clt/models/course.dart';
+import 'package:clt/pages/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'conceptView.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -34,7 +35,7 @@ class CourseView extends StatelessWidget {
                       ));
                       return;
                     }
-                    await _signOut();
+                    await _signOut(context);
 
                     final String email = user.email;
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -69,7 +70,7 @@ class CourseView extends StatelessWidget {
     return ListTile(
         title: Text(concept.title),
         onTap: () {
-          _pushPage(context, Home());
+          _pushPage(context, ConceptView(concept));
         }
     );
   }
@@ -99,7 +100,8 @@ class CourseView extends StatelessWidget {
     );
   }
 
-  Future<void> _signOut() async {
+  Future<void> _signOut(context) async {
     await _auth.signOut();
+    _pushPage(context, Welcome());
   }
 }
