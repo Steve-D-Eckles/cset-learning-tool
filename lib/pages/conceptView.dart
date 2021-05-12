@@ -3,9 +3,6 @@ import 'package:clt/pages/quiz1.dart';
 import 'package:clt/pages/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:clt/pages/quizView.dart';
-
-import 'quizView.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -48,30 +45,32 @@ class ConceptView extends StatelessWidget {
             })
           ]
       ),
-      body: Column(
-        children:<Widget>[
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-            child: SingleChildScrollView(
-              child: Text(concept.body, style: TextStyle(fontSize: 18))
-          ),
-        ),
-          Container(
-            child: SizedBox(
-              width: 200,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: myColor1),
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context)=> Quiz()),
-                  );
-                },
-                child: Text('Quiz')
+      body: Container(
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text(concept.body, style: TextStyle(fontSize: 18)),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                child: SizedBox(
+                  width: 200,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(primary: myColor1),
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=> Quiz()),
+                        );
+                      },
+                      child: Text('Quiz')
+                  ),
+                ),
               ),
-            ),
-          ),
-      ])
+            ],
+          )
+        ),
+      )
     );
   }
 
