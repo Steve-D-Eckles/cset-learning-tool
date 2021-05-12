@@ -57,14 +57,18 @@ class ConceptView extends StatelessWidget {
           ),
         ),
           Container(
-            child: ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context)=> Quiz()),
-                );
-              },
-              child: Text('Quiz')
+            child: SizedBox(
+              width: 200,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: myColor1),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=> Quiz()),
+                  );
+                },
+                child: Text('Quiz')
+              ),
             ),
           ),
       ])
