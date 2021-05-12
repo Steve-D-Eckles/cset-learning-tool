@@ -33,6 +33,14 @@ class _QuizState extends State<Quiz>{
   bool _answerTrue2 = false;
   bool _answerTrue3 = false;
   bool _answerTrue4 = false;
+  bool _answerFalse = false;
+  bool _answerFalse2 = false;
+  bool _answerFalse3 = false;
+  bool _answerFalse4 = false;
+  bool _answerFalse5 = false;
+  bool _answerFalse6 = false;
+  bool _answerFalse7 = false;
+  bool _answerFalse8 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +93,7 @@ class _QuizState extends State<Quiz>{
                                           child: Text('Mickey'),
                                           style: ElevatedButton.styleFrom(
                                             primary: myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -93,12 +102,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse = true;
+                                            })
                                           },
                                           child: Text('Donald'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                            primary: _answerFalse ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -107,12 +119,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse2 = true;
+                                            })
                                           },
                                           child: Text('Goofy'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse2 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -122,12 +137,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse3 = true;
+                                            })
                                           },
                                           child: Text('Daisey'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse3 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -161,13 +179,17 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 300,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse4 = true;
+                                            })
                                           },
                                           child: Text('To find the cure for smelling of elderberries',
                                             textAlign: TextAlign.center,),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse4 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0),
+                                            padding: EdgeInsets.all(5.0)
                                           ),
                                         ),
                                       ),
@@ -185,6 +207,7 @@ class _QuizState extends State<Quiz>{
                                           child: Text('To find the holy grail'),
                                           style: ElevatedButton.styleFrom(
                                             primary: myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -218,12 +241,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse5 = true;
+                                            })
                                           },
                                           child: Text('Mauve'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse5 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -240,6 +266,7 @@ class _QuizState extends State<Quiz>{
                                           child: Text('Blue'),
                                           style: ElevatedButton.styleFrom(
                                             primary: myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -248,12 +275,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse6 = true;
+                                            })
                                           },
                                           child: Text('Indifferent'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse6 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -263,12 +293,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse7 = true;
+                                            })
                                           },
                                           child: Text('Pink'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse7 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -302,12 +335,15 @@ class _QuizState extends State<Quiz>{
                                       child: SizedBox(
                                         width: 200,
                                         child: ElevatedButton(
-                                          onPressed: (){
-                                            print('Pressed');
+                                          onPressed: () => {
+                                            setState(() {
+                                              _answerFalse8 = true;
+                                            })
                                           },
                                           child: Text('Nope'),
                                           style: ElevatedButton.styleFrom(
-                                            primary: myColor2,
+                                              primary: _answerFalse8 ? myColor4 : myColor2,
+                                              textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -325,6 +361,7 @@ class _QuizState extends State<Quiz>{
                                           child: Text('Yup'),
                                           style: ElevatedButton.styleFrom(
                                             primary: myColor2,
+                                            textStyle: TextStyle(fontSize: 20.0)
                                           ),
                                         ),
                                       ),
@@ -337,11 +374,15 @@ class _QuizState extends State<Quiz>{
                         ),
                         Container(
                           padding: EdgeInsets.only(bottom: 50.0),
-                          child: ElevatedButton(
-                            child: Text('Back'),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
+                          child: SizedBox(
+                            width: 200,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(primary: myColor1),
+                              child: Text('Back'),
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                            ),
                           ),
                         ),
                       ],
