@@ -1,7 +1,11 @@
 import 'package:clt/models/concept.dart';
+import 'package:clt/pages/quiz1.dart';
 import 'package:clt/pages/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:clt/pages/quizView.dart';
+
+import 'quizView.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -44,12 +48,26 @@ class ConceptView extends StatelessWidget {
             })
           ]
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
-        child: SingleChildScrollView(
-            child: Text(concept.body, style: TextStyle(fontSize: 18))
+      body: Column(
+        children:<Widget>[
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+            child: SingleChildScrollView(
+              child: Text(concept.body, style: TextStyle(fontSize: 18))
+          ),
         ),
-      )
+          Container(
+            child: ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=> Quiz()),
+                );
+              },
+              child: Text('Quiz')
+            ),
+          ),
+      ])
     );
   }
 
